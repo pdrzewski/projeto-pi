@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body style="background-color: cadetblue;">
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: darkblue;">
+        QUANTIDADE DE CLIMATIZADORES NECESSÁRIA
+        <br> EM UM ESTÁDIO DE FUTEBOL </h1>
+        
+    <label style="font-family: Arial, Helvetica, sans-serif;"><b>Insira a área total do estádio em (m²):</b></label>
+    <br>
+    <input type="text" id="ipt_area_estadio">
+    <br>
+    <br>
+
+    <label style="font-family: Arial, Helvetica, sans-serif;"><b>Insira a quantidade de climatizadores por m²:</b></label>
+    <br>
+    <input type="text" id="ipt_qtd_climatizador_porM2">
+    <br>
+    <br>
+    
+    <label style="font-family: Arial, Helvetica, sans-serif ;"><b>Quanto custa um climatizador industrial?</b></label>
+    <br>
+    <input type="texte" id="ipt_custo_climatizador">
+    <br>
+    <br>
+
+    <button onclick="calcular()"><b>CALCULAR</b></button>
+    <div id="div_resposta"></div>
+    
+</body>
+    <script>
+        function calcular(){
+
+            var araeEstadio = Number (ipt_area_estadio.value)
+            var qtdClimatizadoresM2 = 100;
+            var totalClimatizadores =  araeEstadio / qtdClimatizadoresM2
+            // calcular qual vai ser o custo dos climatizadores necessários
+            var custoUmClimatizador = Number (ipt_custo_climatizador.value)
+            var custoTotalClimatizadores = custoUmClimatizador * totalClimatizadores
+
+            if(araeEstadio >= 8000 && araeEstadio <= 12000){
+             div_resposta.innerHTML = `<h2> <b>
+             Serão necessários ${totalClimatizadores} climatizadores industriais
+             para uma área de ${araeEstadio}m²
+             <p> O custo dos ${totalClimatizadores} climatizadores será de 
+            R$ ${custoTotalClimatizadores},00 </p> </b> </h2>`
+
+            }else{
+                alert (`Área inválida! A área de um estádio de futebol é de no mínimo 8000m2 `)
+            }
+            
+            // calcular qual vai ser o custo dos climatizadores necessários
+            var custoUmClimatizador = Number (ipt_custo_climatizador.value)
+            var custoTotalClimatizadores = custoUmClimatizador * totalClimatizadores
+
+        
+
+        }
+    </script>
+</html>
