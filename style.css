@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    text-align: center;
+    background-color:cornflowerblue;
+}
+
+
+.titulo{
+    padding: 30px 30px;
+    align-items: center;    
+}
+
+
+input{
+    border-radius: 8px;
+    background-color: rgb(251, 224, 245);
+    border: none;
+    padding: 6px 6px;
+    text-align: center;
+
+
+}
+
+.estiloInput{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.botoes{
+    padding: 10px 20px;
+    border: none;
+    background-color:gray;
+    border-radius: 11px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 1s background;
+
+}
+
+.botoes:hover{
+    background-color: rgb(42,169,57);
+    color: rgb(249,250,253);
+    transition: 0.75s background;
+}
+
+
+.fix{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+
+}

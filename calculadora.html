@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimeTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <!--criação dos inputs para os valores desejados-->
+    <div class="titulo">
+        <h1><b>Simulador ClimeTec</b></h1>
+</div>
+
+    <div class="estiloInput">
+        <label for="tipoEvento">Insira o tipo do evento (jogo/show):</label>
+        <input type="text" id="tipoEvento">
+    <br><br>
+        <label for="qtdingresso">Insira a quantidade de ingressos vendidos anualmente:</label>
+        <input type="number" id="qtdingresso">
+    <br><br>
+        <label for="valorDoIngresso">Insira o valor atual do ingresso:</label>
+        <input type="number" id="valorDoIngresso">
+    <br><br>
+    </div>
+
+
+
+
+<!--criação do botão com a utilizade apenas aplicável quando clicado-->
+
+       <button class="botoes" onclick="verificar()">Calcular!</button>
+
+
+
+    
+ <!-- criação das divs-->   
+    <div class="fix" id="div1"></div>
+    <br>
+    <div class="fix" id="div2"></div>
+    <br>
+    <div  class="fix" id="div3" style="color: green;"></div>
+
+
+    
+</body>
+<script>
+    //10%ingresso
+
+    function verificar(){ 
+        var evento = tipoEvento.value
+        var ingresso = qtdingresso.value
+        var valor = valorDoIngresso.value
+
+        const lucroAtualevento = ingresso * valor
+        const lucroComProjeto = (ingresso * (valor * 1.1))
+        const lucroFinal = ( lucroComProjeto - lucroAtualevento)
+
+        //erros alertas
+                evento !="show" && evento!="jogo"?alert("Tipo de Evento Inválido!!"):alert
+                ingresso <=0 ?alert("Quantidade de ingressos Inválida!!"):alert
+                valor <=0 ?alert("Valor dos Ingressos Inválido!!"):alert
+
+
+        // exibir as frases nas divs conforme os dados inseridos!
+
+            if(evento =='jogo'){
+                div1.innerHTML =`O evento do tipo ${evento} terá um lucro com ingressos de R$${lucroAtualevento.toFixed(3)} com a venda de ${ingresso} ingressos Sem o nosso projeto!.`
+                div2.innerHTML=`O evento do tipo ${evento} terá um lucro com ingressos de R$${lucroComProjeto.toFixed(3)} com a venda de ${ingresso} ingressos Com o nosso projeto!.`
+                div3.innerHTML=`Tendo assim um lucro de R$${lucroFinal.toFixed(2)} com a utilização do nosso projeto!`
+
+            }else if(evento =="show"){
+                div1.innerHTML =`O evento do tipo ${evento} terá um lucro com ingressos de R$${lucroAtualevento.toFixed(3)} com a venda de ${ingresso} ingressos Sem o nosso projeto!.`
+                div2.innerHTML=`O evento do tipo ${evento} terá um lucro com ingressos de R$${lucroComProjeto.toFixed(3)} com a venda de ${ingresso} ingressos Com o nosso projeto!.`
+                div3.innerHTML=`Tendo assim um lucro de R$${lucroFinal.toFixed(2)} com a utilização do nosso projeto!`
+
+            }
+                            
+
+        
+
+    }
+</script>
+</html>
