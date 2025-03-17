@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimeTec - Calcule aqui!</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1 class="calcule_aqui">Calcule aqui sua economia!</h1>
+
+    <br> <br>
+
+    <div class="valores-ipt">
+
+        <label for="ipt_area " class=" fonteIPT">Informe a área do estádio em m²:</label>
+        <input type="text" id="ipt_area"> <br> <br>
+
+        <label for="ipt_maoObra " class=" fonteIPT">Informe quantidade de funcionários necessária:</label>
+        <input type="text" id="ipt_maoObra">
+
+    </div>
+
+    <button class="botao_economia" onclick="economia()">Verificar Economia</button>
+    <br> <br><br>
+    <h3 id="mostrar"></h3>
+
+</body>
+
+<script>
+
+    function economia() {
+
+        console.log("var 1");
+
+        var area = Number(ipt_area.value);
+        var maoObra = Number(ipt_maoObra.value);
+
+        console.log("var 2");
+        var salario = 2000;
+        var valormaoObra = Number(maoObra * salario);
+
+        console.log("var 3");
+        var qtdUmi = Number(area / 400);
+        var valorUmi = Number(qtdUmi * 6000);
+
+
+        console.log("var 4");
+        var Arduino = 150;
+        var valorArduino = (qtdUmi * Arduino);
+
+        console.log("var 5");
+        var instalacao = 50000;
+
+
+        var totalSem = Number(valorUmi + valormaoObra + valorArduino);
+        var totalCom = Number(totalSem - (totalSem * 0.40));
+
+        console.log("mostrando");
+        mostrar.innerHTML = `Sem o serviço da ClimeTech, você gastaria uma média de: R$${totalSem}! <br> <br>
+        Com o serviço da ClimeTech, você gastaria uma média de: R$${totalCom}!<br> <br>
+        <h2 sytle="text-align: center;">Sua economia foi de: R$${(totalSem - totalCom)}!</h2>
+        `
+
+
+    }
+
+</script>
+
+</html>

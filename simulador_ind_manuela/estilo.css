@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(173, 171, 191);
+    font-family: "Inconsolata", monospace;
+}
+
+.calcule_aqui {
+    font-weight: 600;
+    font-size: 30px;
+    font-family: "Inconsolata", monospace;
+
+}
+
+.valores-ipt {
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+input {
+    border-radius: 8px;
+    border: none;
+    padding: 6px 6px;
+    background-color: rgb(231, 231, 231);
+}
+
+.botao_economia {
+    padding: 16px 31px;
+    background-color: rgb(61, 67, 110);
+    border: none;
+    color: #fff;
+    border-radius: 11px;
+    font-family: "Inconsolata", monospace;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 1s background;
+}
+
+.botao_economia:hover {
+    background-color: rgb(41, 45, 77);
+}
+
+#mostrar {
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    text-align: center;
+}
